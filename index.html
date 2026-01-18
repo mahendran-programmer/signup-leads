@@ -113,6 +113,125 @@
             border: none;
             font-size: 18px;
             border-radius: 8px;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background: #e89600;
+            cursor: pointer;
+        }
+
+        .loader {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .loader.active {
+            display: flex;
+        }
+
+        .spinner {
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #f5a623;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            max-width: 400px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            animation: slideIn 0.3s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .modal-content h2 {
+            color: #f5a623;
+            margin-top: 0;
+            font-size: 24px;
+        }
+
+        .modal-content p {
+            color: #666;
+            font-size: 16px;
+            margin: 15px 0;
+        }
+
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: #f5a623;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 50px;
+            color: white;
+        }
+
+        .modal-btn {
+            background: #f5a623;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .modal-btn:hover {
+            background: #e89600;
+        }
+
+        .error-icon {
+            background: #ff6b6b;
         }
 
         footer {
@@ -240,8 +359,53 @@
 
     <a href="https://wa.me/919344018303" class="whatsapp-btn">💬</a>
 
+    <div class="loader" id="loader">
+        <div class="spinner"></div>
+    </div>
+
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <div class="success-icon" id="modalIcon">✓</div>
+            <h2 id="modalTitle">Success!</h2>
+            <p id="modalMessage">Thank you! We will contact you soon.</p>
+            <button class="modal-btn" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
     <script>
         const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbws52RIdmGlhkIu-VTPsZF-pV4R3e8FgN9ojlp0-LPcGVDfhPtfolzNsFLnn4nVdb1V/exec";
+
+        function showLoader() {
+            document.getElementById("loader").classList.add("active");
+        }
+
+        function hideLoader() {
+            document.getElementById("loader").classList.remove("active");
+        }
+
+        function showModal(title, message, isSuccess = true) {
+            const modal = document.getElementById("modal");
+            const modalTitle = document.getElementById("modalTitle");
+            const modalMessage = document.getElementById("modalMessage");
+            const modalIcon = document.getElementById("modalIcon");
+
+            modalTitle.textContent = title;
+            modalMessage.textContent = message;
+
+            if (isSuccess) {
+                modalIcon.textContent = "✓";
+                modalIcon.className = "success-icon";
+            } else {
+                modalIcon.textContent = "✕";
+                modalIcon.className = "success-icon error-icon";
+            }
+
+            modal.classList.add("active");
+        }
+
+        function closeModal() {
+            document.getElementById("modal").classList.remove("active");
+        }
 
         document.getElementById("leadForm").addEventListener("submit", function (e) {
             e.preventDefault();
@@ -254,17 +418,21 @@
                 message: document.getElementById("message").value
             };
 
+            showLoader();
+
             fetch(GOOGLE_SCRIPT_URL, {
                 method: "POST",
                 mode: "no-cors",     // ⭐ REQUIRED
                 body: JSON.stringify(formData)
             })
                 .then(() => {
-                    alert("Thank you! We will contact you soon.");
+                    hideLoader();
+                    showModal("Success!", "Thank you! We will contact you soon.", true);
                     document.getElementById("leadForm").reset();
                 })
                 .catch(() => {
-                    alert("Submission failed. Please try again.");
+                    hideLoader();
+                    showModal("Error", "Submission failed. Please try again.", false);
                 });
         });
     </script>
