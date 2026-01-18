@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signup Networks Pvt Ltd - CCTV Service in Chennai</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #ffefd9;
+            color: #333;
+        }
+
+        header {
+            background: #f5a623;
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 18px;
+        }
+
+        .call-btn {
+            background: #000;
+            color: white;
+            padding: 14px 24px;
+            border-radius: 8px;
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .columns {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+        }
+
+        .box {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 260px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            font-size: 16px;
+        }
+
+        .box img {
+            width: 28px;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+
+        .form-container {
+            max-width: 1100px;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: flex-start;
+        }
+
+        .form-container .text {
+            flex: 1;
+            min-width: 300px;
+            text-align: left;
+        }
+
+        .form-container form {
+            flex: 1;
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 10px;
+            min-width: 300px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        form input,
+        form select,
+        form textarea {
+            width: 100%;
+            padding: 14px;
+            margin: 12px 0;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            font-size: 16px;
+            font-family: Arial, sans-serif;
+        }
+
+        form button {
+            width: 100%;
+            padding: 14px;
+            background: #f5a623;
+            color: white;
+            border: none;
+            font-size: 18px;
+            border-radius: 8px;
+        }
+
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 40px;
+        }
+
+        .whatsapp-btn {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 20px;
+            right: 20px;
+            background: #25D366;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 60px;
+            font-size: 30px;
+            color: white;
+            text-decoration: none;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 28px;
+            }
+
+            .box {
+                width: 100%;
+            }
+
+            .form-container {
+                flex-direction: column;
+            }
+
+            .form-container form {
+                min-width: 100%;
+                padding: 20px;
+            }
+
+            form input,
+            form select,
+            form textarea {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Secure Your Space with CCTV Today</h1>
+        <p>CCTV Service in 4 Hours • Installation in 24 Hours • Upgrades • Affordable Pricing</p>
+        <a class="call-btn" href="tel:+919344018303">📞 Call Now: +91 93440 18303</a>
+    </header>
+
+    <section class="section">
+        <div class="columns">
+            <div class="box"><img src="https://img.icons8.com/ios/50/camera.png"> CCTV Service in 4 Hours</div>
+            <div class="box"><img src="https://img.icons8.com/ios/50/maintenance.png"> Installation in 24 Hours</div>
+            <div class="box"><img src="https://img.icons8.com/ios/50/wrench.png"> Upgrade & Re-Wiring</div>
+            <div class="box"><img src="https://img.icons8.com/ios/50/000000/price-tag.png"> Service Starting ₹499</div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="form-container">
+
+            <div class="text">
+                <h2>Complete CCTV Solutions in Chennai</h2>
+                <p>Signup Networks Pvt Ltd provides CCTV installation, repair, upgrades, DVR/NVR setup and mobile
+                    viewing support.</p>
+                <p>We service Hikvision, CP Plus, Dahua, and wireless cameras. Same-day service available across
+                    Chennai.</p>
+                <a class="call-btn" href="tel:+919344018303">📞 Call Now</a>
+            </div>
+
+            <form id="leadForm">
+                <h3>Request Service</h3>
+                <input type="text" id="name" placeholder="Your Name" required />
+                <input type="text" id="phone" placeholder="Phone Number" required />
+                <input type="text" id="location" placeholder="Your Location" required />
+                <select id="service" required>
+                    <option value="">Select Service</option>
+                    <option>New Installation</option>
+                    <option>Camera Repair</option>
+                    <option>Upgrade Service</option>
+                    <option>DVR Setup</option>
+                    <option>Mobile View Setup</option>
+                </select>
+                <textarea id="message" placeholder="Additional Details"></textarea>
+                <button type="submit">Submit</button>
+            </form>
+
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>Our Services</h2>
+        <div class="columns">
+            <div class="box"><img src="https://img.icons8.com/ios/50/home.png"> Home CCTV Installation</div>
+            <div class="box"><img src="https://img.icons8.com/ios/50/office.png"> Office CCTV Installation</div>
+            <div class="box"><img src="https://img.icons8.com/fluency/48/upgrade.png"> CCTV Upgrade & Re-Wiring</div>
+            <div class="box"><img src="https://img.icons8.com/ios/50/wifi.png"> Wireless Camera Setup</div>
+            <div class="box"><img src="https://img.icons8.com/ios/50/hdd.png"> DVR/NVR Configuration</div>
+            <div class="box"><img src="https://img.icons8.com/ios/50/smartphone.png"> Mobile App Viewing Setup</div>
+        </div>
+    </section>
+
+    <section class="section" style="background:#f5a623;color:white;">
+        <h2>Book Your CCTV Service Now</h2>
+        <p>Fast Service • Trusted Technicians • Affordable Pricing</p>
+        <a class="call-btn" href="tel:+919344018303" style="background:black;">📞 Call Now</a>
+    </section>
+
+    <footer>
+        Signup Networks Pvt Ltd • Kolathur, Chennai • +91 93440 18303 • +91 90436 03588
+        <br>© 2026 Signup Networks – All Rights Reserved
+    </footer>
+
+    <a href="https://wa.me/919344018303" class="whatsapp-btn">💬</a>
+
+    <script>
+        // Replace with your Google Apps Script Web App URL
+        const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxtbhHwxAr_ydC5vv5BKDgagedoYNsSX92GMcX5EOVBfjXcqQcuQj6yOku4N5ekacil/exec";
+
+        document.getElementById("leadForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            const formData = {
+                name: document.getElementById("name").value,
+                phone: document.getElementById("phone").value,
+                location: document.getElementById("location").value,
+                service: document.getElementById("service").value,
+                message: document.getElementById("message").value
+            };
+
+            fetch(GOOGLE_SCRIPT_URL, {
+                method: "POST",
+                body: JSON.stringify(formData),
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            })
+            .then(res => res.json())
+            .then(data => {
+                alert("Thank you! We will contact you soon.");
+                document.getElementById("leadForm").reset();
+            })
+            .catch(err => {
+                console.error("Error:", err);
+                alert("Error submitting form. Please try again.");
+            });
+        });
+    </script>
+
+</body>
+
+</html>
