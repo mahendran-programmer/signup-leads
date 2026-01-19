@@ -7,9 +7,15 @@
     <title>Signup Networks Pvt Ltd - CCTV Service in Chennai</title>
 
     <style>
+        html, body {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
             background: #ffefd9;
             color: #333;
         }
@@ -19,6 +25,8 @@
             color: white;
             padding: 60px 20px;
             text-align: center;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         header h1 {
@@ -44,6 +52,8 @@
         .section {
             padding: 60px 20px;
             text-align: center;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .columns {
@@ -240,6 +250,8 @@
             text-align: center;
             padding: 25px;
             margin-top: 40px;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .whatsapp-btn {
@@ -259,27 +271,164 @@
         }
 
         @media (max-width: 768px) {
+            header {
+                padding: 40px 15px;
+            }
+
             header h1 {
                 font-size: 28px;
+                margin-bottom: 10px;
+            }
+
+            header p {
+                font-size: 16px;
+            }
+
+            .section {
+                padding: 40px 15px;
             }
 
             .box {
                 width: 100%;
+                margin: 10px 0;
             }
 
             .form-container {
                 flex-direction: column;
+                gap: 30px;
+                padding: 0 10px;
+            }
+
+            .form-container .text {
+                text-align: center;
+                min-width: 100%;
             }
 
             .form-container form {
-                min-width: 100%;
+                width: 100%;
+                margin: 0 auto;
                 padding: 20px;
+                max-width: 500px;
             }
 
             form input,
             form select,
             form textarea {
                 font-size: 16px;
+            }
+
+            footer {
+                padding: 20px 15px;
+                font-size: 14px;
+            }
+
+            .call-btn {
+                padding: 12px 20px;
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 460px) {
+            html, body {
+                width: 100%;
+                overflow-x: hidden;
+            }
+
+            header {
+                padding: 25px 12px;
+                width: 100vw;
+                margin-left: calc(-50vw + 50%);
+            }
+
+            header h1 {
+                font-size: 22px;
+                margin-bottom: 8px;
+            }
+
+            header p {
+                font-size: 14px;
+            }
+
+            .section {
+                padding: 25px 12px;
+                width: 100vw;
+                margin-left: calc(-50vw + 50%);
+            }
+
+            .columns {
+                gap: 15px;
+            }
+
+            .box {
+                width: 100%;
+                padding: 15px;
+                font-size: 14px;
+            }
+
+            .box img {
+                width: 24px;
+                margin-right: 8px;
+            }
+
+            .form-container {
+                flex-direction: column;
+                gap: 20px;
+                padding: 0 12px;
+            }
+
+            .form-container .text {
+                text-align: center;
+                width: 100%;
+            }
+
+            .form-container .text h2 {
+                font-size: 20px;
+            }
+
+            .form-container .text p {
+                font-size: 14px;
+            }
+
+            .form-container form {
+                width: 100%;
+                max-width: 100%;
+                margin: 0 auto;
+                padding: 15px;
+                min-width: auto;
+            }
+
+            form input,
+            form select,
+            form textarea {
+                padding: 12px;
+                margin: 10px 0;
+                font-size: 14px;
+            }
+
+            form button {
+                padding: 12px;
+                font-size: 16px;
+            }
+
+            footer {
+                padding: 15px 12px;
+                font-size: 12px;
+                width: 100vw;
+                margin-left: calc(-50vw + 50%);
+            }
+
+            .call-btn {
+                padding: 10px 16px;
+                font-size: 14px;
+            }
+
+            .whatsapp-btn {
+                width: 50px;
+                height: 50px;
+                line-height: 50px;
+                font-size: 24px;
+                bottom: 15px;
+                right: 15px;
             }
         }
     </style>
